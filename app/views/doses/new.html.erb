@@ -1,4 +1,10 @@
-<h1>Add a new dose</h1>
-<%= render 'form', dose: [@coktail, @dose] %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h1>Add a new dose</h1>
+        <%= render 'form', dose: [@coktail, @dose] %>
+    </div>
+  </div>
+</div>
 
 <%= link_to "See all cocktails", cocktails_path %>

@@ -1,19 +1,19 @@
-<h1><%= @cocktail.name %></h1>
-<h3>How to make this cocktail?</h3>
-
-<p>
-  <ul>
-  <% @cocktail.doses.each do |dose| %>
-   <li><%= "#{dose.description} de #{dose.ingredient.name}" %></li>
-    <%= link_to dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' } do %>
-    <i class="fas fa-trash-alt"></i>
+<div class="card-cocktail">
+  <h1><%= @cocktail.name %></h1>
+  <p><ul>
+    <% @cocktail.doses.each do |dose| %>
+     <div class="inline"><li><%= "#{dose.description} de #{dose.ingredient.name}" %></li>
+        <%= link_to dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fas fa-trash-alt"></i>
+      </div>
+      <% end %>
     <% end %>
-  <% end %>
-  </ul>
-</p>
+  </ul></p>
+ <div class="inline">
+  <p class="card-cocktail-nav"><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %></p>
+ <br>
+  <p class="card-cocktail-nav"><%= link_to "See all cocktails", cocktails_path %></p>
+</div>
+</div>
 
 
-<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
-<br>
-
-<%= link_to "See all cocktails", cocktails_path %>

@@ -1,8 +1,22 @@
-<h1>My Cocktails</h1>
+<div class="home-banner">
+<h1>
+  <span id="banner-typed-text"></span>
+</h1>
+</div>
 
-<% @cocktails.each do |cocktail| %>
-  <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
-<% end %>
+<div class="navbar-lewagon">
+  <%= link_to new_cocktail_path do %>
+  <p><i class="fas fa-plus-circle"></i>Add a cocktail</p>
+  <% end %>
+</div>
 
-<%= link_to "Add a cocktail", new_cocktail_path %>
+
+  <% @cocktails.each do |cocktail| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random)">
+      <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+    </div>
+  <% end %>
+
+
+
 

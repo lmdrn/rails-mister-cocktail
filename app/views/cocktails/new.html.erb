@@ -1,3 +1,10 @@
-<h1>Add a new cocktail</h1>
-<%= render 'form', cocktail: [@cocktail] %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h1>Add a new cocktail</h1>
+      <%= render 'form', cocktail: [@cocktail] %>
+    </div>
+  </div>
+</div>
+
 <%= link_to "See all cocktails", cocktails_path %>
